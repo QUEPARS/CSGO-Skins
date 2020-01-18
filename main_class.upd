@@ -1,3 +1,12 @@
 <?php
-Echo "Main Class";
+Class MainClass{
+function __construct(){
+require_once("inc/config.php");
+try{
+$this->db = new PDO("mysql:host=$host;dbname=$dbname",$user,$password);
+} catch (PDOExtention $e){
+Echo "[MYSQL] Error: ".$e->getMessage();
+}
+}
+}
 ?>
